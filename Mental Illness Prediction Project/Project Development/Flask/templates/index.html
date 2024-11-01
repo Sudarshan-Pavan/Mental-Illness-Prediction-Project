@@ -1,0 +1,275 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Add your meta tags, title, and styles here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 60%;
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predict Mental Health</h1>
+    <form action="/out" method="post">
+
+
+      <label for="age">Age:</label>
+<select id="age" name="age" required>
+  <option value="">Select Age</option>
+  <!-- Generating options from 1 to 100 -->
+  <!-- You can manually write these options or generate them using a loop in the backend -->
+  <!-- Feel free to adjust this as needed -->
+  <script>
+    for (let i = 1; i <= 100; i++) {
+      document.write(`<option value="${i}">${i}</option>`);
+    }
+  </script>
+</select>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Non-Binary">Other</option>
+        </select>
+        <br><br>
+
+
+      <label for="self_employed">Self Employed:</label>
+<select id="self_employed" name="self_employed" required>
+   <option value="">Select</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+</select>
+<br><br>
+
+
+<label for="family_history">Family History:</label>
+<select id="family_history" name="family_history" required>
+  <option value="">Select</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+</select>
+<br><br>
+
+<label for="work_interfere">Work Interfere:</label>
+<select id="work_interfere" name="work_interfere" required>
+  <option value="">Select</option>
+  <option value="Often">Often</option>
+  <option value="Rarely">Rarely</option>
+  <option value="Never">Never</option>
+  <option value="Sometimes">Sometimes</option>
+  <option value="N/A">N/A</option>
+</select>
+
+<label for="no_employees">Number of Employees:</label>
+<select id="no_employees" name="no_employees" required>
+  <option value="">Select</option>
+  <option value="1-5">1-5</option>
+  <option value="6-25">6-25</option>
+  <option value="26-100">26-100</option>
+  <option value="100-500">100-500</option>
+  <option value="500-1000">500-1000</option>
+  <option value="More than 1000">More than 1000</option>
+</select>
+
+
+<label for="remote_work">Remote Work:</label>
+<select id="remote_work" name="remote_work" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<label for="tech_company">Tech Company:</label>
+<select id="tech_company" name="tech_company" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+</select>
+
+<label for="benefits">Benefits:</label>
+<select id="benefits" name="benefits" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="Don't know">Don't know</option>
+  <option value="No">No</option>
+</select>
+
+<label for="care_options">Care Options:</label>
+<select id="care_options" name="care_options" required>
+  <option value="">Select</option>
+  <option value="Not sure">Not sure</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<label for="wellness_program">Wellness Program:</label>
+<select id="wellness_program" name="wellness_program" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Don't know">Don't know</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<label for="seek_help">Seek Help:</label>
+<select id="seek_help" name="seek_help" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="Don't know">Don't know</option>
+  <option value="No">No</option>
+</select>
+
+
+<label for="anonymity">Anonymity:</label>
+<select id="anonymity" name="anonymity" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="Don't know">Don't know</option>
+  <option value="No">No</option>
+</select>
+
+
+<label for="leave">Leave:</label>
+<select id="leave" name="leave" required>
+  <option value="">Select</option>
+  <option value="Somewhat easy">Somewhat easy</option>
+  <option value="Don't know">Don't know</option>
+  <option value="Somewhat difficult">Somewhat difficult</option>
+  <option value="Very difficult">Very difficult</option>
+  <option value="Very easy">Very easy</option>
+</select>
+
+
+<label for="mental_health_consequence">Mental Health Consequence:</label>
+<select id="mental_health_consequence" name="mental_health_consequence" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Maybe">Maybe</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<label for="phys_health_consequence">Physical Health Consequence:</label>
+<select id="phys_health_consequence" name="phys_health_consequence" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+  <option value="Maybe">Maybe</option>
+</select>
+
+
+<label for="coworkers">Coworkers:</label>
+<select id="coworkers" name="coworkers" required>
+  <option value="">Select</option>
+  <option value="Some of them">Some of them</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<label for="supervisor">Supervisor:</label>
+<select id="supervisor" name="supervisor" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="No">No</option>
+  <option value="Some of them">Some of them</option>
+</select>
+
+
+<label for="mental_health_interview">Mental Health Interview:</label>
+<select id="mental_health_interview" name="mental_health_interview" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+  <option value="Maybe">Maybe</option>
+</select>
+
+
+<label for="phys_health_interview">Physical Health Interview:</label>
+<select id="phys_health_interview" name="phys_health_interview" required>
+  <option value="">Select</option>
+  <option value="Maybe">Maybe</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+</select>
+
+<label for="mental_vs_physical">Mental vs Physical:</label>
+<select id="mental_vs_physical" name="mental_vs_physical" required>
+  <option value="">Select</option>
+  <option value="Yes">Yes</option>
+  <option value="Don't know">Don't know</option>
+  <option value="No">No</option>
+</select>
+
+
+<label for="obs_consequence">Observed Consequence:</label>
+<select id="obs_consequence" name="obs_consequence" required>
+  <option value="">Select</option>
+  <option value="No">No</option>
+  <option value="Yes">Yes</option>
+</select>
+
+
+<button onclick="window.location.href='/submit'">Proceed</button>
+
+    </form>
+</body>
+</html>
